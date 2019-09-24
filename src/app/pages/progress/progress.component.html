@@ -1,3 +1,46 @@
-<p>
-  progress works!
-</p>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Barra de progreso</h4>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [attr.ariaValuenow]="porcentaje1" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" [style.width]="porcentaje1 + '%'" ></div>
+                  </div>
+                  <br>
+
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" [attr.ariaValuenow]="porcentaje2" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" [style.width]="porcentaje2 + '%'" ></div>
+                  </div>  
+
+
+            </div>
+
+        </div>
+
+    </div>
+  
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+
+                <app-incrementador (cambioValor)="porcentaje1=$event" nombre="progreso azul" [porcentaje]="porcentaje1"></app-incrementador><!--en este caso como le paso un evento no va click dentro del árentesis sino el nombre del ebento en este caso el escrito y a la funcion se le pasa el parametro $event, sino pasarle sin funcion solo con el porcentaje correspondiente a cada uno el eventS-->
+             
+
+              
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+
+                <app-incrementador (cambioValor)="porcentaje2=$event" nombre="progreso verde" [porcentaje]="porcentaje2"></app-incrementador> <!--aca se añade el porcentaje correspondiente correspondiente-->
+            </div>
+        </div>
+    </div>
+</div>          
